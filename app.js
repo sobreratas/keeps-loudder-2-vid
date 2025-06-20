@@ -1,3 +1,26 @@
+const grow = document.querySelectorAll(".grow");
+
+
+const growObserver = new IntersectionObserver(
+ (entries) => {
+   entries.forEach((entry) => {
+     if (entry.isIntersecting) {
+       entry.target.classList.add("show"); // Add show class when intersected
+       growObserver.unobserve(entry.target); // Stop observing once shown
+     }
+   });
+ },
+ {
+   threshold: 0.5,
+ }
+);
+
+
+grow.forEach((fade) => {
+ growObserver.observe(fade);
+});
+
+
 const fadeIn = document.querySelectorAll(".fade-in");
 
 const fadeInObserver = new IntersectionObserver(
