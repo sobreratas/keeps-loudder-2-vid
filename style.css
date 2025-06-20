@@ -242,10 +242,14 @@ h1 {
   background: #333;
   color: #fff;
   text-align: left;
-  transition: background 0.2s;
+  transition: background-color 0.3s ease-in-out;
   margin-bottom: 1rem;
   border-radius: 12px;
   font-size: 1.3rem;
+}
+
+.accordion_btn:hover {
+  background-color: #444;
 }
 
 .accordion_btn::after {
